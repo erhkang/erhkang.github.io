@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>d3.basketball-shot-chart</title>
+    <link rel="stylesheet" type="text/css" href="./css/d3.basketball-shot-chart.css">
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+
+    <style>
+        .main__hero {
+            height: 70vh;
+            padding-top: 3em;
+            text-align:center;                    
+            font-family: "Ambit", Arial, sans-serif;
+            color:white;
+            font-size: 30px;
+        }
+        body {
+          background-color: #383838;
+        }
+        #buttons {
+            overflow: hidden;
+            background-color: #383838;
+            position: fixed; /* Set the navbar to fixed position */
+            top: 0; /* Position the navbar at the top of the page */
+            width: 100%; /* Full width */
+        }
+        .intro {
+          text-align:center;
+          color:white;
+          height: 10vh;
+        }
+        svg { font-family: Arial, sans-serif;
+          display: block;
+          margin: 0 auto;
+          background-color: white;
+              }
+        .tooltip_circle {	
+              position: absolute;			
+              text-align: left;			
+              width: 80px;					
+              height: 50px;					
+              padding: 1px;				
+              font: 8px Arial, sans-serif;		
+              background: white;	
+              border: 0px;		
+              border-radius: 3px;			
+              pointer-events: none;	}
+        .tooltip_bar {	
+              position: absolute;			
+              text-align: center;			
+              width: 30px;					
+              height: 20px;									
+              font: 12px Arial, sans-serif;		
+              background-color: transparent;	
+              border: 0px;		
+              border-radius: 3px;			
+              pointer-events: none;	}
+
+        .shot-legends{font: 18px Arial, sans-serif;}
+        .explore-button{
+              float: right;
+              display: inline-block;
+              padding: 0.35em 1.2em;
+              
+              margin:0 0.1em 0.1em 0;
+              border-radius:2px;
+              box-sizing: border-box;
+              text-decoration:none;
+              font-family:'Roboto',sans-serif;
+              font-weight:300;
+              color: white;
+              background-color: #383838;
+              text-align: center;
+              transition: all 0.2s;
+           }
+        .explore-button:hover{
+          color: #383838;
+          background-color: white;
+            }
+        
+        .flex-container {
+         width: 1336px; 
+         padding-top: 20px; 
+         display: flex; 
+         margin: 0 auto;
+         background-color: white;
+         justify-content: space-evenly;
+        }
+        #filters{
+         width: 1336px; 
+         padding-top: 20px; 
+         display: flex; 
+         margin: 0 auto;
+         background-color: white;
+         justify-content: space-evenly;
+        }
+        
+
+
+    </style>
+  </head>
+
+  <body onload='init()'>
+    <div id="buttons">
+      <a href="./explore.html" class = "explore-button" id="explore" onclick="clickButton()"> Explore </a>
+      <a href="./top.html" class = "explore-button" id="explore" onclick="clickButton()"> Career Events </a>
+      <a href="./index.html" class = "explore-button" id="main" onclick="clickButton()"> Main </a>
+    </div>
+
+    <header class="main__hero">
+      <h1>Visualization of all <br>Kobe Bryant's 30,697 shots </h1>
+    </header>
+
+        
+    <p class="intro"> <em>Kobe Braynt made 30,699 shots in his 20-year career with Los Angeles Lakers.<br> 
+        He has won 5 NBA championships, 18-time All-Star, 15-time member of the All-NBA Team,<br> 
+        12-time member of the All-Defensive Team, 2008 NBA Most Valuable Player (MVP), 2-time NBA Finals MVP,<br>
+         and an Oscar Award.</em>
+    </p>  
+    <div class="flex-container">
+      <label class = "" for="season-select">Choose a season:</label>
+      <label class = "" for="shot-type-select">Choose a shot-type:</label>
+      <label class = "" for="shot-range-select">Choose a shot-range:</label>
+      <label class = "" for="shot-angle-select">Choose a shot-angle:</label>
+    </div>
+    <div class="flex-container" id = "filters">
+        <select name = "seasons" id="season-select">
+          <option value="">--Choose an season--</option>
+          <option value="1996-97">1996-97</option>
+          <option value="1997-98">1997-98</option>
+          <option value="1998-99">1998-99</option>
+          <option value="1999-00">1999-00</option>
+          <option value="2000-01">2000-01</option>
+          <option value="2001-02">2001-02</option>
+          <option value="2002-03">2002-03</option>
+          <option value="2003-04">2003-04</option>
+          <option value="2004-05">2004-05</option>
+          <option value="2005-06">2005-06</option>
+          <option value="2006-07">2006-07</option>
+          <option value="2007-08">2007-08</option>
+          <option value="2008-09">2008-09</option>
+          <option value="2009-10">2009-10</option>
+          <option value="2010-11">2010-11</option>
+          <option value="2011-12">2011-12</option>
+          <option value="2012-13">2012-13</option>
+          <option value="2013-14">2013-14</option>
+          <option value="2014-15">2014-15</option>
+          <option value="2015-16">2015-16</option>
+        </select>
+        <select name = "shot-type" id="shot-type-select">
+          <option value="">--Choose an shot-type--</option>
+          <option value="2PT Field Goal">2PT</option>
+          <option value="3PT Field Goal">3PT</option>
+        </select>
+        <select name = "shot-range" id="shot-range-select">
+          <option value="">--Choose a shot-range--</option>
+          <option value="Less Than 8 ft.">Less than 8 ft</option>
+          <option value="8-16 ft.">8-16 ft</option>
+          <option value="16-24 ft.">16-24 ft</option>
+          <option value="24+ ft.">24+ ft</option>
+        </select>
+        <select name = "shot-angle" id="shot-angle-select">
+          <option value="">--Choose a shot-angle--</option>
+          <option value="Center(C)">Center</option>
+          <option value="Left Side Center(LC)">Left Side Center</option>
+          <option value="Left Side(L)">Left Side</option>
+          <option value="Right Side Center(RC)">Right Side Center</option>
+          <option value="Right Side(R)">Right Side</option>
+        </select>
+    </div>
+    <div id="chart">
+      <svg></svg>
+    </div>
+
+    <script src="./js/explore.js"></script>
+    
+  </body>
+</html>
