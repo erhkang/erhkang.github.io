@@ -446,18 +446,20 @@
         
 
         // Create coordinates
-        fg_g.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar)).style("font-size", "16px").style("font-weight", "bold");
+        fg_g.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar));
         fg_g.append("g").attr("transform", "translate("+0+","+chart_height+")").call(d3.axisBottom(xbar).tickValues([0, 10000, 20000, 30000]));
 
         //Create Legends
         fg_g.append("text")
             .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
             .attr("transform", "translate("+ (-130) +","+(chart_height/2+20)+")rotate(-90)")  // text is drawn off the screen top left, move down and out and rotate
+	    .style("font-size", "16px").style("font-weight", "bold")
             .text("NBA Career Leaders");
 
         fg_g.append("text")
         .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
         .attr("transform", "translate("+ (chart_width/2) +","+(chart_height+chart_padding/2)+")")  // centre below axis
+	.style("font-size", "16px").style("font-weight", "bold")
         .text("Field Goal Attempts");
 
 
@@ -498,18 +500,20 @@
                       .style("top", (d3.event.pageY - 25) + "px");});
 
         // Create coordinates
-        fg_g2.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar2)).style("font-size", "16px").style("font-weight", "bold");
+        fg_g2.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar2));
         fg_g2.append("g").attr("transform", "translate("+0+","+chart_height+")").call(d3.axisBottom(xbar2).tickValues([0, 10000, 20000, 30000, 40000]));
 
         //Create Legends
         fg_g2.append("text")
             .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
             .attr("transform", "translate("+ (-130) +","+(chart_height/2+20)+")rotate(-90)")  // text is drawn off the screen top left, move down and out and rotate
+	    .style("font-size", "16px").style("font-weight", "bold")
             .text("NBA Career Leaders");
 
         fg_g2.append("text")
         .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
         .attr("transform", "translate("+ (chart_width/2) +","+(chart_height+chart_padding/2)+")")  // centre below axis
+	.style("font-size", "16px").style("font-weight", "bold")
         .text("Points");
 
       }
