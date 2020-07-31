@@ -378,7 +378,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", shotX(142))
                     .attr("y1", shotY(181))
-                    .attr("x2", -courtWidth/2-60)
+                    .attr("x2", -courtWidth/2-50)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
       circle_legends.append("circle")
                     .attr("display", "true")
@@ -396,7 +396,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", shotX(-113))
                     .attr("y1", shotY(224))
-                    .attr("x2", -courtWidth/2-70)
+                    .attr("x2", -courtWidth/2-50)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
       circle_legends.append("circle")
                     .attr("display", "true")
@@ -414,7 +414,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", shotX(-23))
                     .attr("y1", shotY(40))
-                    .attr("x2", -courtWidth/2-70)
+                    .attr("x2", -courtWidth/2-50)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
       circle_legends.append("circle")
                     .attr("display", "true")
@@ -434,7 +434,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", shotX(-100))
                     .attr("y1", shotY(143))
-                    .attr("x2", -courtWidth/2-70)
+                    .attr("x2", -courtWidth/2-50)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
 
       circle_legends.append("circle")
@@ -453,7 +453,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", 0)
                     .attr("y1", visibleCourtLength-freeThrowLineLength)
-                    .attr("x2", -courtWidth/2-70)
+                    .attr("x2", -courtWidth/2-50)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
 
       circle_legends.append("circle")
@@ -472,7 +472,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", shotX(-58))
                     .attr("y1", shotY(188))
-                    .attr("x2", -courtWidth/2-70)
+                    .attr("x2", -courtWidth/2-50)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
 
       circle_legends.append("circle")
