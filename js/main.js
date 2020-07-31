@@ -1,7 +1,7 @@
 //background-image: linear-gradient(to bottom, #383838, white);
       // Global Variables
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      var margin = {top:0, right:100, bottom:0, left:100},
+      var margin = {top:0, right:30, bottom:0, left:30},
           width =  vw - margin.left - margin.right,
           height = 1600 - margin.top - margin.bottom;
       var gold = "#fdb927",
@@ -386,8 +386,8 @@
         { Name: "Michael Jordan", Point: 32292}];
 
       function draw_fg() {
-        var chart_width = width*(4);
-        var chart_height = 400;
+        var chart_width = width*(2/5);
+        var chart_height = 300;
         var chart_padding = 100;
         var ybar = d3.scaleBand()
                   .domain(["Kareem Abdul-Jabbar","Karl Malone","Kobe Bryant","Lebron James","Michael Jordan"])
@@ -416,7 +416,7 @@
         .attr('x',0)
         .attr('y', function(d) {return ybar(d.Name)+10;})
         .attr('width',function(d){return xbar(d.Shot);})
-        .attr('height',20)
+        .attr('height',40)
         .style('fill', function(d){
             if (d.Name == "Kobe Bryant") {
               return purple;
@@ -469,7 +469,7 @@
         .attr('x',0)
         .attr('y', function(d) {return ybar2(d.Name)+10;})
         .attr('width',function(d){return xbar2(d.Point);})
-        .attr('height',20)
+        .attr('height',40)
         .style('fill', function(d){
             if (d.Name == "Kobe Bryant") {
               return purple;
