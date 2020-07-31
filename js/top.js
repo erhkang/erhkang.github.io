@@ -1,7 +1,7 @@
 
       // Global Variables
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      var margin = {top:0, right:100, bottom:0, left:100},
+      var margin = {top:0, right:30, bottom:0, left:30},
           width =  vw - margin.left - margin.right,
           height = 900 - margin.top - margin.bottom;
       var gold = "#fdb927",
@@ -15,7 +15,7 @@
       
       // Court Variables
       // full width of basketball court (ft)
-      var scale = 15;
+      var scale = 25;
       var courtWidth = 50 * scale,                            // full width of basketball court (ft)
           courtLength = 94 * scale,                            // full length of basketball court (ft)
           visibleCourtLength = courtLength / 2,
@@ -65,10 +65,10 @@
       // Create Shots Legends
     
       var shot_legends = svg.append('g').attr('class', 'shot-legends').attr('transform', 'translate('+(width - courtWidth)/4+','+(visibleCourtLength - freeThrowLineLength)+')');
-      shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 10).style('fill',gold);
-      shot_legends.append('text').attr('x', 20).attr('y',7).text('Missed');
-      shot_legends.append('circle').attr('cx',0).attr('cy',30).attr('r', 10).style('fill',purple);
-      shot_legends.append('text').attr('x', 20).attr('y',37).text('Made');
+      shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 20).style('fill',gold);
+      shot_legends.append('text').attr('x', 30).attr('y',10).text('Missed');
+      shot_legends.append('circle').attr('cx',0).attr('cy',60).attr('r', 20).style('fill',purple);
+      shot_legends.append('text').attr('x', 30).attr('y',67).text('Made');
 
 
 
@@ -215,7 +215,7 @@
           })
           .style('opacity', 1)
           .style("display", "true")
-          .attr("r", 1.8);
+          .attr("r", 2.2);
       
         // if filtered dataset has less circles than already existing, remove excess
         //locations.exit()
