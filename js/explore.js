@@ -62,10 +62,10 @@
       // Create Shots Legends
     
       var shot_legends = svg.append('g').attr('class', 'shot-legends').attr('transform', 'translate('+(width - courtWidth)/4+','+(visibleCourtLength - freeThrowLineLength+200)+')');
-      shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 10).style('fill',gold);
-      shot_legends.append('text').attr('x', 20).attr('y',7).text('Missed');
-      shot_legends.append('circle').attr('cx',0).attr('cy',30).attr('r', 10).style('fill',purple);
-      shot_legends.append('text').attr('x', 20).attr('y',37).text('Made');
+      shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 20).style('fill',gold);
+      shot_legends.append('text').attr('x', 30).attr('y',10).text('Missed');
+      shot_legends.append('circle').attr('cx',0).attr('cy',60).attr('r', 20).style('fill',purple);
+      shot_legends.append('text').attr('x', 30).attr('y',67).text('Made');
 
 
 
