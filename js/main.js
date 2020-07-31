@@ -416,7 +416,7 @@
         .attr('x',0)
         .attr('y', function(d) {return ybar(d.Name)+10;})
         .attr('width',function(d){return xbar(d.Shot);})
-        .attr('height',40)
+        .attr('height',30)
         .style('fill', function(d){
             if (d.Name == "Kobe Bryant") {
               return purple;
@@ -469,7 +469,7 @@
         .attr('x',0)
         .attr('y', function(d) {return ybar2(d.Name)+10;})
         .attr('width',function(d){return xbar2(d.Point);})
-        .attr('height',40)
+        .attr('height',30)
         .style('fill', function(d){
             if (d.Name == "Kobe Bryant") {
               return purple;
