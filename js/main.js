@@ -62,7 +62,7 @@
     
       var shot_legends = svg.append('g').attr('class', 'shot-legends').attr('transform', 'translate('+(width - courtWidth)/4+','+(visibleCourtLength - freeThrowLineLength)+')');
       shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 20).style('fill',gold);
-      shot_legends.append('text').attr('x', 30).attr('y',5).text('Missed');
+      shot_legends.append('text').attr('x', 30).attr('y',10).text('Missed');
       shot_legends.append('circle').attr('cx',0).attr('cy',60).attr('r', 20).style('fill',purple);
       shot_legends.append('text').attr('x', 30).attr('y',67).text('Made');
 
@@ -643,7 +643,7 @@
       }
 
       function anno_mvp() {
-        var cx = 685;
+        var cx = 785;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
@@ -719,7 +719,7 @@
 
 
       function anno_injury() {
-        var cx = 1040;
+        var cx = 1180;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
