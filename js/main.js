@@ -647,7 +647,7 @@
       }
 
       function anno_mvp() {
-        var cx = 755;
+        var cx = 765;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
