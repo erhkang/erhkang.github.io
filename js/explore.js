@@ -1,9 +1,9 @@
 
       // Global Variables
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
-      var margin = {top:0, right:100, bottom:0, left:100},
+      var margin = {top:0, right:30, bottom:0, left:30},
           width =  vw - margin.left - margin.right,
-          height = 800 - margin.top - margin.bottom;
+          height = 1200 - margin.top - margin.bottom;
       var gold = "#fdb927",
           purple = "#552583";
       document.querySelector(".flex-container").style.width = width + "px";
@@ -12,7 +12,7 @@
       
       // Court Variables
       // full width of basketball court (ft)
-      var scale = 15;
+      var scale = 25;
       var courtWidth = 50 * scale,                            // full width of basketball court (ft)
           courtLength = 94 * scale,                            // full length of basketball court (ft)
           visibleCourtLength = courtLength / 2,
@@ -444,7 +444,7 @@
             if (d.SHOT_MADE_FLAG == "0") {return gold;} else {return purple;}
           })
           .style('opacity', 0.5)
-          .attr("r", 1.8)
+          .attr("r", 2.2)
           .on("mouseover", function(d) {
             tooltip_circle.transition().duration(100).style("opacity", .9);
             tooltip_circle.html("<p>" + d.GAME_DATE.slice(0,4) + "-" + d.GAME_DATE.slice(4,6) + "-" + d.GAME_DATE.slice(6,8) + " vs. " + d.OPPONENT + 
