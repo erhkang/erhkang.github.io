@@ -386,7 +386,7 @@
         { Name: "Michael Jordan", Point: 32292}];
 
       function draw_fg() {
-        var chart_width = width*(2/5);
+        var chart_width = width*(3.5/10);
         var chart_height = 300;
         var chart_padding = 100;
         var ybar = d3.scaleBand()
