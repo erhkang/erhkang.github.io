@@ -166,7 +166,7 @@
 
       // Stacked Chart
       var chart_g = svg.append('g').attr('class', 'stacked-chart').attr('transform', 'translate('+(width - chart_width)/2+','+(visibleCourtLength+50)+')');
-      var chart2 = svg.append('g').attr('class', 'chart2').attr('transform', 'translate('+(width - chart_width)/4+','+((visibleCourtLength - threePointRadius)/2+200)+')');
+      var chart2 = svg.append('g').attr('class', 'chart2').attr('transform', 'translate('+(width - chart_width)/4+','+((visibleCourtLength - threePointRadius)/2+240)+')');
 
 
       //Load Data
@@ -287,25 +287,25 @@
         */
 
         // Create coordinates
-        svg.append("g").attr("transform", "translate("+(width - chart_width)/4+","+((visibleCourtLength - threePointRadius)/2+200)+")").call(d3.axisLeft(c2ybar).tickValues([0, 5000, 10000, 15000, 18000]));
-        svg.append("g").attr("transform", "translate("+(width - chart_width)/4+","+((visibleCourtLength - threePointRadius)/2+180+200)+")").call(d3.axisBottom(c2xbar));
+        svg.append("g").attr("transform", "translate("+(width - chart_width)/4+","+((visibleCourtLength - threePointRadius)/2+240)+")").call(d3.axisLeft(c2ybar).tickValues([0, 5000, 10000, 15000, 18000]));
+        svg.append("g").attr("transform", "translate("+(width - chart_width)/4+","+((visibleCourtLength - threePointRadius)/2+180+240)+")").call(d3.axisBottom(c2xbar));
 
         svg.append("text")
         .attr("class","fg-txt1")
         //.attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-        .attr("transform", "translate("+ ((width - chart_width)/4) +","+((visibleCourtLength - threePointRadius)/2+20)+")")  // centre below axis
+        .attr("transform", "translate("+ ((width - chart_width)/4) +","+((visibleCourtLength - threePointRadius)/2+60)+")")  // centre below axis
         .text("Kobe made "+madeShot);
 
         svg.append("text")
         .attr("class","fg-txt2")
         //.attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-        .attr("transform", "translate("+ ((width - chart_width)/4) +","+((visibleCourtLength - threePointRadius)/2+40)+")")  // centre below axis
+        .attr("transform", "translate("+ ((width - chart_width)/4) +","+((visibleCourtLength - threePointRadius)/2+80)+")")  // centre below axis
         .text("out of "+totalShot+" shots");
 
         svg.append("text")
         .attr("class","fg-txt3")
         //.attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-        .attr("transform", "translate("+ ((width - chart_width)/4) +","+((visibleCourtLength - threePointRadius)/2+80)+")")  // centre below axis
+        .attr("transform", "translate("+ ((width - chart_width)/4) +","+((visibleCourtLength - threePointRadius)/2+120)+")")  // centre below axis
         .style("font-size", "34px")
         .text(shotPercentage + "%");
       }
