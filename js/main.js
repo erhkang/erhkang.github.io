@@ -3,7 +3,7 @@
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       var margin = {top:0, right:100, bottom:0, left:100},
           width =  vw - margin.left - margin.right,
-          height = 1200 - margin.top - margin.bottom;
+          height = 1800 - margin.top - margin.bottom;
       var gold = "#fdb927",
           purple = "#552583";
 
@@ -61,10 +61,10 @@
       // Create Shots Legends
     
       var shot_legends = svg.append('g').attr('class', 'shot-legends').attr('transform', 'translate('+(width - courtWidth)/4+','+(visibleCourtLength - freeThrowLineLength)+')');
-      shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 10).style('fill',gold);
-      shot_legends.append('text').attr('x', 20).attr('y',7).text('Missed');
-      shot_legends.append('circle').attr('cx',0).attr('cy',30).attr('r', 10).style('fill',purple);
-      shot_legends.append('text').attr('x', 20).attr('y',37).text('Made');
+      shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 30).style('fill',gold);
+      shot_legends.append('text').attr('x', 20).attr('y',57).text('Missed');
+      shot_legends.append('circle').attr('cx',0).attr('cy',80).attr('r', 30).style('fill',purple);
+      shot_legends.append('text').attr('x', 20).attr('y',87).text('Made');
 
 
 
