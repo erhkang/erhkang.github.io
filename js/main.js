@@ -446,8 +446,8 @@
         
 
         // Create coordinates
-        fg_g.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar));
-        fg_g.append("g").attr("transform", "translate("+0+","+chart_height+")").call(d3.axisBottom(xbar).tickValues([0, 10000, 20000, 30000]));
+        fg_g.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar)).style("font-size", "16px");
+        fg_g.append("g").attr("transform", "translate("+0+","+chart_height+")").call(d3.axisBottom(xbar).tickValues([0, 10000, 20000, 30000])).style("font-size", "16px");
 
         //Create Legends
         fg_g.append("text")
@@ -500,8 +500,8 @@
                       .style("top", (d3.event.pageY - 25) + "px");});
 
         // Create coordinates
-        fg_g2.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar2));
-        fg_g2.append("g").attr("transform", "translate("+0+","+chart_height+")").call(d3.axisBottom(xbar2).tickValues([0, 10000, 20000, 30000, 40000]));
+        fg_g2.append("g").attr("transform", "translate("+0+","+0+")").call(d3.axisLeft(ybar2)).style("font-size", "16px");
+        fg_g2.append("g").attr("transform", "translate("+0+","+chart_height+")").call(d3.axisBottom(xbar2).tickValues([0, 10000, 20000, 30000, 40000])).style("font-size", "16px");
 
         //Create Legends
         fg_g2.append("text")
