@@ -378,7 +378,7 @@
                     .attr("stroke-width", 2)
                     .attr("x1", shotX(142))
                     .attr("y1", shotY(181))
-                    .attr("x2", -courtWidth/2-70)
+                    .attr("x2", -courtWidth/2-60)
                     .attr("y2", (visibleCourtLength-basketProtrusionLength-70));
       circle_legends.append("circle")
                     .attr("display", "true")
@@ -528,8 +528,8 @@
               .attr("xlink:href", "../pics/jersey8.png")
               .attr("x", timescale(twelve3pointersDate)-35)
               .attr("y", "0")
-              .attr("width", "70")
-              .attr("height", "70")
+              .attr("width", "90")
+              .attr("height", "90")
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
@@ -566,8 +566,8 @@
               .attr("xlink:href", "../pics/jersey8.png")
               .attr("x", timescale(eightyoneDate)-35)
               .attr("y", "0")
-              .attr("width", "70")
-              .attr("height", "70")
+              .attr("width", "90")
+              .attr("height", "90")
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
@@ -604,8 +604,8 @@
               .attr("xlink:href", "../pics/jersey8.png")
               .attr("x", timescale(sunsDate)-5)
               .attr("y", "0")
-              .attr("width", "70")
-              .attr("height", "70")
+              .attr("width", "90")
+              .attr("height", "90")
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
@@ -642,8 +642,8 @@
               .attr("xlink:href", "../pics/jersey24.png")
               .attr("x", timescale(achillesDate)-35)
               .attr("y", "0")
-              .attr("width", "70")
-              .attr("height", "70")
+              .attr("width", "90")
+              .attr("height", "90")
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
@@ -680,8 +680,8 @@
               .attr("xlink:href", "../pics/jersey24.png")
               .attr("x", timescale(finaleDate)-35)
               .attr("y", "0")
-              .attr("width", "70")
-              .attr("height", "70")
+              .attr("width", "90")
+              .attr("height", "90")
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
