@@ -247,13 +247,15 @@
             .clamp(true);
 
       svg.append("g").attr("transform", "translate("+(width - chart_width)/2+","+(visibleCourtLength+100)+")").call(d3.axisBottom(timescale));
+      .style("font-size", "18px")
       svg.append("text")
         .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
         .attr("transform", "translate("+(width)/2+","+(visibleCourtLength+140)+")")  // centre below axis
+        .style("font-size", "20px").style("font-weight", "bold")
         .text("Year");
 
 
-      var events_legends = svg.append('g').attr('transform', 'translate('+((width - courtWidth)/4+30)+','+(600)+')');
+      var events_legends = svg.append('g').attr('transform', 'translate('+((width - courtWidth)/4+30)+','+(1600)+')');
       
       events_legends.append("text")
                     .attr("display", "none")
@@ -489,8 +491,8 @@
               .attr("xlink:href", "../pics/jersey8.png")
               .attr("x", timescale(debutDate)-35)
               .attr("y", "0")
-              .attr("width", "70")
-              .attr("height", "70")
+              .attr("width", "90")
+              .attr("height", "90")
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
