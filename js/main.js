@@ -243,9 +243,9 @@
               .enter()
               .append('rect')
               .attr('class','shot-missed')
-              .attr('x',function(d){return (xbar(d.year) + 5);})
+              .attr('x',function(d){return (xbar(d.year) + 20);})
               .attr('y', function(d) {return ybar(100);})
-              .attr('width',30)
+              .attr('width',40)
               .attr('height',function(d) {return 0;})
               .style('fill', gold)
               .on("mouseover", function(d) {
@@ -277,9 +277,9 @@
           //console.log(data[i].year);
           var rect_made = chart_g.append('rect')
           .attr('class','shot-made')
-          .attr('x',(xbar(data[i].year)+5))
+          .attr('x',(xbar(data[i].year)+20))
           .attr('y', ybar(100))
-          .attr('width',30)
+          .attr('width',40)
           .attr('height',0)
           .style('fill', purple)
           .on("mouseover", function(d) {
@@ -335,7 +335,7 @@
             if (d.SHOT_MADE_FLAG == "0") {return gold;} else {return purple;}
           })
           .style('opacity', 0.5)
-          .attr("r", 1.8)
+          .attr("r", 2.2)
           .on("mouseover", function(d) {
             tooltip_circle.transition().duration(100).style("opacity", .9);
             tooltip_circle.html("<p>" + d.GAME_DATE.slice(0,4) + "-" + d.GAME_DATE.slice(4,6) + "-" + d.GAME_DATE.slice(6,8) + " vs. " + d.OPPONENT + 
