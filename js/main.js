@@ -62,7 +62,7 @@
     
       var shot_legends = svg.append('g').attr('class', 'shot-legends').attr('transform', 'translate('+(width - courtWidth)/4+','+(visibleCourtLength - freeThrowLineLength)+')');
       shot_legends.append('circle').attr('cx',0).attr('cy',0).attr('r', 20).style('fill',gold);
-      shot_legends.append('text').attr('x', 30).attr('y',27).text('Missed');
+      shot_legends.append('text').attr('x', 30).attr('y',0).text('Missed');
       shot_legends.append('circle').attr('cx',0).attr('cy',60).attr('r', 20).style('fill',purple);
       shot_legends.append('text').attr('x', 30).attr('y',67).text('Made');
 
@@ -243,9 +243,9 @@
               .enter()
               .append('rect')
               .attr('class','shot-missed')
-              .attr('x',function(d){return (xbar(d.year) + 20);})
+              .attr('x',function(d){return (xbar(d.year) + 10);})
               .attr('y', function(d) {return ybar(100);})
-              .attr('width',40)
+              .attr('width',35)
               .attr('height',function(d) {return 0;})
               .style('fill', gold)
               .on("mouseover", function(d) {
@@ -277,9 +277,9 @@
           //console.log(data[i].year);
           var rect_made = chart_g.append('rect')
           .attr('class','shot-made')
-          .attr('x',(xbar(data[i].year)+20))
+          .attr('x',(xbar(data[i].year)+10))
           .attr('y', ybar(100))
-          .attr('width',40)
+          .attr('width',35)
           .attr('height',0)
           .style('fill', purple)
           .on("mouseover", function(d) {
@@ -577,7 +577,7 @@
 
 
       function anno_three_peat() {
-        var cx = 235;
+        var cx = 335;
         var cy = 100;
         var r = 60;
         var k = r/1.4; // circle point to circumstance
@@ -643,7 +643,7 @@
       }
 
       function anno_mvp() {
-        var cx = 485;
+        var cx = 585;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
@@ -719,7 +719,7 @@
 
 
       function anno_injury() {
-        var cx = 740;
+        var cx = 840;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
