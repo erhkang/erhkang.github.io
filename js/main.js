@@ -388,7 +388,7 @@
       function draw_fg() {
         var chart_width = width*(2/5);
         var chart_height = 300;
-        var chart_padding = 100;
+        var chart_padding = 200;
         var ybar = d3.scaleBand()
                   .domain(["Kareem Abdul-Jabbar","Karl Malone","Kobe Bryant","Lebron James","Michael Jordan"])
 	                .range([0, chart_height]);
@@ -643,7 +643,7 @@
       }
 
       function anno_mvp() {
-        var cx = 765;
+        var cx = 775;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
