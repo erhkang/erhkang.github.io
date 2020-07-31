@@ -359,7 +359,7 @@
       var svg_fg = d3.select("#fg_list")
                   .select("svg")
                     .attr("width", width)
-                    .attr("height", 400);
+                    .attr("height", 500);
       // For Field Goal              
       var fg_g =svg_fg.append("g")
                     .attr("class", "fg_g")
@@ -388,7 +388,7 @@
       function draw_fg() {
         var chart_width = width*(2/5);
         var chart_height = 300;
-        var chart_padding = 200;
+        var chart_padding = 100;
         var ybar = d3.scaleBand()
                   .domain(["Kareem Abdul-Jabbar","Karl Malone","Kobe Bryant","Lebron James","Michael Jordan"])
 	                .range([0, chart_height]);
