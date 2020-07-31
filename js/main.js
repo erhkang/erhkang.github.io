@@ -11,7 +11,7 @@
       
       // Court Variables
       // full width of basketball court (ft)
-      var scale = 30;
+      var scale = 25;
       var courtWidth = 50 * scale,                            // full width of basketball court (ft)
           courtLength = 94 * scale,                            // full length of basketball court (ft)
           visibleCourtLength = courtLength / 2,
