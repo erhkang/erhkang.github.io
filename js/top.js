@@ -3,7 +3,7 @@
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       var margin = {top:0, right:30, bottom:0, left:30},
           width =  vw - margin.left - margin.right,
-          height = 1300 - margin.top - margin.bottom;
+          height = 1250 - margin.top - margin.bottom;
       var gold = "#fdb927",
           purple = "#552583";
 
