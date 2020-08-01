@@ -581,7 +581,7 @@
 
 
       function anno_three_peat() {
-        var cx = 280;
+        var cx = 270;
         var cy = 100;
         var r = 80;
         var k = r/1.4; // circle point to circumstance
@@ -647,7 +647,7 @@
       }
 
       function anno_mvp() {
-        var cx = 735;
+        var cx = 710;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
@@ -723,7 +723,7 @@
 
 
       function anno_injury() {
-        var cx = 1120;
+        var cx = 1070;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
