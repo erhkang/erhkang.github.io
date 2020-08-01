@@ -510,7 +510,7 @@
                   document.querySelector("#top-description").innerHTML = 
                   "At the age of 17, Kobe Bryant was drafted 13th by the Charlotte Hornets in 1996, and then traded to L.A. for Vlade Divac."+
                   " He became the youngest player to start an NBA game at 18 years, 158 days old."+
-                  " Kobe made his first field goal on Nov 6, 1996, against Hornets.";
+                  " Kobe made his first field goal on Nov 6, 1996 against Hornets.";
 
                 } else {
                   thisElement.attr("y", "0");
@@ -550,7 +550,7 @@
                     .style("opacity", 0.2);
                   document.querySelector("#title").innerHTML = "<strong><em>Greatest Streak Shooting!</em></strong><br><br>";
                   document.querySelector("#top-description").innerHTML = 
-                  "On Jan 7, 2003, Kobe made 12 3-pointers, breaking the NBA record set by Orlando's Dennis Scott in April 1996." +
+                  "On Jan 7, 2003, Kobe made twelve 3-pointers, breaking the NBA record set by Orlando's Dennis Scott in April 1996." +
                   " He made nine consecutive 3-pointers in the span, also breaking a NBA record." + 
                   " After the game the Los Angeles coach Phil Jackson said:<br><br>" + 
                   "<em>\"That was perhaps the greatest streak shooting I think I have ever seen in my life.\"</em>";
@@ -596,7 +596,7 @@
                   document.querySelector("#title").innerHTML = "<strong><em>Mr. 81</em></strong><br><br>";
                   document.querySelector("#top-description").innerHTML = 
                   "On Jan 22, 2006, as the Lakers scored a 122-104 comeback victory at home, Bryant finished with 81 points on 28-of-46 shooting, including 7-of-13 from 3-point range, and 18-of-20 from the foul line." +
-                  " 81-point is the second highest point in NBA history just behind Chamberlain's 100-point game." + 
+                  " 81 is the second highest point in NBA history just behind Chamberlain's 100-point game." + 
                   " Even Kobe himself is stunned by this performance:<br><br>" + 
                   "<em>\"Not even in my dreams. That was something that just happened. It's tough to explain. It's just one of those things.\"</em>";
                 } else {
@@ -736,7 +736,7 @@
                   " He outscored the Jazz in the fourth quarter 23-21. With his team trailing with just under six minutes to go," +
                   " Bryant scored 17 consecutive points for his team. He also made the game winner with 31 seconds remaining." +
                   " Bryant told the Staples Center crowd as he thanked the fans, his teammates and his family: " + 
-                  "<em>\"I can't believe how fast 20 years went by\"</em>," + " Bryant told the Staples Center crowd as he thanked the fans, his teammates and his family. " + 
+                  "<em>\"I can't believe how fast 20 years went by\"</em>," + 
                   "He recalled how it was his dream to play for the Lakers, his favorite team growing up:<br><br>" + 
                   "<em>\"You can't write something better than this.\"";
                 } else {
