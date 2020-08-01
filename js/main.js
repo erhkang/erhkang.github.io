@@ -796,9 +796,9 @@
             .text('after the injury');
         
       }
-
+/*
     const sections = document.querySelectorAll(".padding");
-    console.log(sections);
+    //console.log(sections);
     const options = {
       root: null, // relative to document viewport 
       rootMargin: '0px', // margin around root. Values are similar to css property. Unitless values not allowed
@@ -809,7 +809,7 @@
 
 
     function setActive(entries, oberver) {
-      console.log("I do see you!") 
+      //console.log("I do see you!") 
     
       for (entry of entries) {
           //const section = document.querySelector('#' + entry.target.id);
@@ -819,3 +819,4 @@
           } 
       }
   }
+*/

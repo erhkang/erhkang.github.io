@@ -8,7 +8,7 @@
           purple = "#552583";
       document.querySelector(".flex-container").style.width = width + "px";
       document.querySelector("#filters").style.width = width + "px";
-      console.log("width is:" + document.querySelector(".flex-container").style.width);
+      //console.log("width is:" + document.querySelector(".flex-container").style.width);
       
       // Court Variables
       // full width of basketball court (ft)
@@ -544,7 +544,7 @@
           });
         totalShot =  missedShot+madeShot;
         shotPercentage = ((madeShot/totalShot)*100).toFixed(1);
-        console.log("total shot: " + totalShot);
+        //console.log("total shot: " + totalShot);
         // console.log("made shot: " + madeShot);
         // console.log("FG %: " + shotPercentage);
 

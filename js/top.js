@@ -3,12 +3,12 @@
       const vw = Math.max(document.documentElement.clientWidth || 0, window.innerWidth || 0);
       var margin = {top:0, right:30, bottom:0, left:30},
           width =  vw - margin.left - margin.right,
-          height = 1600 - margin.top - margin.bottom;
+          height = 1350 - margin.top - margin.bottom;
       var gold = "#fdb927",
           purple = "#552583";
 
       document.querySelector(".p-wrapper").style.width = width + "px";
-      console.log("aa is " + document.querySelector(".p-wrapper").style.width);
+      //console.log("aa is " + document.querySelector(".p-wrapper").style.width);
 
 
       
@@ -249,7 +249,7 @@
       svg.append("g").attr("transform", "translate("+(width - chart_width)/2+","+(visibleCourtLength+100)+")").call(d3.axisBottom(timescale)).style("font-size", "18px");
       svg.append("text")
         .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
-        .attr("transform", "translate("+(width)/2+","+(visibleCourtLength+160)+")")  // centre below axis
+        .attr("transform", "translate("+(width - chart_width)/2+","+(visibleCourtLength+160)+")")  // centre below axis
         .style("font-size", "20px").style("font-weight", "bold")
         .text("Year");
 
@@ -285,13 +285,13 @@
                     .attr("class", "three-pointer events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(20)+')')
-                    .text("Distance: 25 feet");
+                    .text("Last three pointer");
       events_legends.append("text")
                     .attr("display", "none")
                     .attr("class", "three-pointer events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(40)+')')
-                    .text("Jump Shot");
+                    .text("of the game");
 
       /////////////////////////////////////////////
       events_legends.append("text")
@@ -304,13 +304,13 @@
                     .attr("class", "eightyone events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(20)+')')
-                    .text("Distance: 4 feet");
+                    .text("Last field goal");
       events_legends.append("text")
                     .attr("display", "none")
                     .attr("class", "eightyone events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(40)+')')
-                    .text("Running Jump Shot");
+                    .text("of the game");
       /////////////////////////////////////////////
       events_legends.append("text")
                     .attr("display", "none")
@@ -322,13 +322,13 @@
                     .attr("class", "suns events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(20)+')')
-                    .text("Distance: 17 feet");
+                    .text("17 feet Game Winner");
       events_legends.append("text")
                     .attr("display", "none")
                     .attr("class", "suns events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(40)+')')
-                    .text("Jump Shot");
+                    .text("");
       /////////////////////////////////////////////
       events_legends.append("text")
                     .attr("display", "none")
@@ -340,13 +340,13 @@
                     .attr("class", "achilles events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(20)+')')
-                    .text("Distance: 14 feet");
+                    .text("Kobe made 2 free throws");
       events_legends.append("text")
                     .attr("display", "none")
                     .attr("class", "achilles events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(40)+')')
-                    .text("Free Throw");
+                    .text("after tearing his achilles");
       /////////////////////////////////////////////
       events_legends.append("text")
                     .attr("display", "none")
@@ -358,13 +358,13 @@
                     .attr("class", "finale events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(20)+')')
-                    .text("Distance: 19 feet");
+                    .text("19-feet game winner");
       events_legends.append("text")
                     .attr("display", "none")
                     .attr("class", "finale events-legends")
                     .attr("text-anchor", "middle")  // this makes it easy to centre the text as the transform is applied to the anchor
                     .attr('transform', 'translate('+0+','+(40)+')')
-                    .text("Pullup Jump Shot");
+                    .text("Last shot of Kobe's career");
 
       var circle_legends = d3.select("body")
                     .select("svg")
@@ -495,26 +495,30 @@
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
-                console.log("this is " + thisElement.attr("y"));
+                //console.log("this is " + thisElement.attr("y"));
                 resetImages();
 
                 if (currenty == 0) {
                   //Not selected yet
                   thisElement.attr("y", "-20");
-                  document.querySelector("#top-description")
-                          .innerHTML = "This is Kobe's first Shot.";
                   d3.selectAll(".text-debut").attr("display", "true");
                   d3.select("circle.text-debut")
                     .transition().duration(1500).style("opacity", 1);
                   d3.selectAll("circle.shot-circles")
                     .style("opacity", 0.2);
+                  document.querySelector("#title").innerHTML = "<strong><em>First Shot</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = 
+                  "At the age of 17, Kobe Bryant was drafted 13th by the Charlotte Hornets in 1996, and then traded to L.A. for Vlade Divac."+
+                  " He became the youngest player to start an NBA game at 18 years, 158 days old."+
+                  " Kobe made his first field goal on Nov 6, 1996, against Hornets.";
+
                 } else {
                   thisElement.attr("y", "0");
-                  document.querySelector("#top-description")
-                          .innerHTML = "Click on Kobe's jersey to see some exciting moments in Kobe's career!";
                   d3.selectAll(".text-debut").attr("display", "none");
                   //d3.select("circle.text-debut")
                   //  .transition().duration(1500).style("opacity", 0);
+                  document.querySelector("#title").innerHTML = "<strong><em>Click on Kobe's jersey to see some exciting moments in Kobe's career!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = "";
                   displayShots();
                 }
             })
@@ -533,19 +537,24 @@
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
-                console.log("this is " + thisElement.attr("y"));
+                //console.log("this is " + thisElement.attr("y"));
                 resetImages();
 
                 if (currenty == 0) {
                   //Not selected yet
                   thisElement.attr("y", "-20");
-                  document.querySelector("#top-description")
-                          .innerHTML = "Kobe made 12 3-pointers.";
                   d3.selectAll(".three-pointer").attr("display", "true");
                   d3.select("circle.three-pointer")
                     .transition().duration(1500).style("opacity", 1);
                   d3.selectAll("circle.shot-circles")
                     .style("opacity", 0.2);
+                  document.querySelector("#title").innerHTML = "<strong><em>Greatest Streak Shooting!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = 
+                  "On Jan 7, 2003, Kobe made 12 3-pointers, breaking the NBA record set by Orlando's Dennis Scott in April 1996." +
+                  " He made nine consecutive 3-pointers in the span, also breaking a NBA record." + 
+                  " After the game the Los Angeles coach Phil Jackson said:<br><br>" + 
+                  "<em>\"That was perhaps the greatest streak shooting I think I have ever seen in my life.\"</em>";
+                  
                 } else {
                   thisElement.attr("y", "0");
                   document.querySelector("#top-description")
@@ -554,6 +563,8 @@
                   //d3.select("circle.three-pointer")
                   //  .transition().duration(1500).style("opacity", 0);
                   displayShots();
+                  document.querySelector("#title").innerHTML = "<strong><em>Click on Kobe's jersey to see some exciting moments in Kobe's career!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = "";
                 }
               })
               .on("mouseover", function(d) {
@@ -571,19 +582,23 @@
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
-                console.log("this is " + thisElement.attr("y"));
+                //console.log("this is " + thisElement.attr("y"));
                 resetImages();
 
                 if (currenty == 0) {
                   //Not selected yet
                   thisElement.attr("y", "-20");
-                  document.querySelector("#top-description")
-                          .innerHTML = "Kobe scored 81 points.";
                   d3.selectAll(".eightyone").attr("display", "true");
                   d3.select("circle.eightyone")
                     .transition().duration(1500).style("opacity", 1);
                   d3.selectAll("circle.shot-circles")
                     .style("opacity", 0.2);
+                  document.querySelector("#title").innerHTML = "<strong><em>Mr. 81</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = 
+                  "On Jan 22, 2006, as the Lakers scored a 122-104 comeback victory at home, Bryant finished with 81 points on 28-of-46 shooting, including 7-of-13 from 3-point range, and 18-of-20 from the foul line." +
+                  " 81-point is the second highest point in NBA history just behind Chamberlain's 100-point game." + 
+                  " Even Kobe himself is stunned by this performance:<br><br>" + 
+                  "<em>\"Not even in my dreams. That was something that just happened. It's tough to explain. It's just one of those things.\"</em>";
                 } else {
                   thisElement.attr("y", "0");
                   document.querySelector("#top-description")
@@ -592,6 +607,8 @@
                   //d3.select("circle.eightyone")
                   //  .transition().duration(1500).style("opacity", 0);
                   displayShots();
+                  document.querySelector("#title").innerHTML = "<strong><em>Click on Kobe's jersey to see some exciting moments in Kobe's career!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = "";
                 }
               })
               .on("mouseover", function(d) {
@@ -609,7 +626,7 @@
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
-                console.log("this is " + thisElement.attr("y"));
+                //console.log("this is " + thisElement.attr("y"));
                 resetImages();
 
                 if (currenty == 0) {
@@ -622,6 +639,11 @@
                     .transition().duration(1500).style("opacity", 1);
                   d3.selectAll("circle.shot-circles")
                     .style("opacity", 0.2);
+                  document.querySelector("#title").innerHTML = "<strong><em>The Clutch Shot</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = 
+                  "On April 30 in 2006, Kobe Bryant knocked down a couple of clutch shots at the STAPLES Center - one, nearly a buzzer-beater, in regulation to force overtime and one in the extra session which was the game-winning buzzer-beater."+
+                  " The Lakers won the Game, 99-98 and took a 3-1 series lead against the Phoenix Suns in the first round of the 2006 Playoffs." + 
+                  " Out of all of Kobe Bryant's clutch moments in his career, this moment was arguably the most memorable one.";
                 } else {
                   thisElement.attr("y", "0");
                   document.querySelector("#top-description")
@@ -630,6 +652,8 @@
                   //d3.select("circle.suns")
                   //  .transition().duration(1500).style("opacity", 0);
                   displayShots();
+                  document.querySelector("#title").innerHTML = "<strong><em>Click on Kobe's jersey to see some exciting moments in Kobe's career!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = "";
                 }
               })
               .on("mouseover", function(d) {
@@ -647,7 +671,7 @@
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
-                console.log("this is " + thisElement.attr("y"));
+                //console.log("this is " + thisElement.attr("y"));
                 resetImages();
 
                 if (currenty == 0) {
@@ -660,6 +684,12 @@
                     .transition().duration(1500).style("opacity", 1);
                   d3.selectAll("circle.shot-circles")
                     .style("opacity", 0.2);
+                  document.querySelector("#title").innerHTML = "<strong><em>Heartbreaking Injury</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = 
+                  "On April 12, 2013, Kobe torn his Achilles tendon with only three minutes remained in the fourth quarter." + 
+                  " Kobe limped back to hit his two free throws before heading off to the locker room and an offseason of rehabilitation." + 
+                  " Kobe was emotional after the game:<br><br>" + 
+                  "<em>\"I was really tired, man. I was just tired in the locker room. Upset and dejected and thinking about this mountain I have to overcome. This is a long process. I wasn’t sure I could do it. But then the kids walked in here, and I had to set an example. ‘Daddy’s going to be fine. I’m going to do it.’ I’m going to work hard and go from there.\"</em>";
                 } else {
                   thisElement.attr("y", "0");
                   document.querySelector("#top-description")
@@ -668,6 +698,8 @@
                   //d3.select("circle.achilles")
                   //  .transition().duration(1500).style("opacity", 0);
                   displayShots();
+                  document.querySelector("#title").innerHTML = "<strong><em>Click on Kobe's jersey to see some exciting moments in Kobe's career!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = "";
                 }
               })
               .on("mouseover", function(d) {
@@ -685,7 +717,7 @@
               .on("click", function(d) {
                 const thisElement = d3.select(this);
                 let currenty = thisElement.attr("y");
-                console.log("this is " + thisElement.attr("y"));
+                //console.log("this is " + thisElement.attr("y"));
                 resetImages();
 
                 if (currenty == 0) {
@@ -698,6 +730,15 @@
                     .transition().duration(1500).style("opacity", 1);
                   d3.selectAll("circle.shot-circles")
                     .style("opacity", 0.2);
+                  document.querySelector("#title").innerHTML = "<strong><em>Mamba out</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = 
+                  "On April 13, 2016, Kobe scored a spectacular 60 points in his farewell NBA game." + 
+                  " He outscored the Jazz in the fourth quarter 23-21. With his team trailing with just under six minutes to go," +
+                  " Bryant scored 17 consecutive points for his team. He also made the game winner with 31 seconds remaining." +
+                  " Bryant told the Staples Center crowd as he thanked the fans, his teammates and his family: " + 
+                  "<em>\"I can't believe how fast 20 years went by\"</em>," + " Bryant told the Staples Center crowd as he thanked the fans, his teammates and his family. " + 
+                  "He recalled how it was his dream to play for the Lakers, his favorite team growing up:<br><br>" + 
+                  "<em>\"You can't write something better than this.\"";
                 } else {
                   thisElement.attr("y", "0");
                   document.querySelector("#top-description")
@@ -705,7 +746,9 @@
                   d3.selectAll(".finale").attr("display", "none");
                   //d3.select("circle.finale")
                   //  .transition().duration(1500).style("opacity", 0);
-                  displayShots();
+                  displayShots();                
+                  document.querySelector("#title").innerHTML = "<strong><em>Click on Kobe's jersey to see some exciting moments in Kobe's career!</em></strong><br><br>";
+                  document.querySelector("#top-description").innerHTML = "";
                 }
               })
               .on("mouseover", function(d) {
