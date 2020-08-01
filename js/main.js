@@ -647,7 +647,7 @@
       }
 
       function anno_mvp() {
-        var cx = 710;
+        var cx = 695;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
@@ -723,7 +723,7 @@
 
 
       function anno_injury() {
-        var cx = 1070;
+        var cx = 1055;
         var cy = 100;
         var r = 20;
         var k = r/1.4; // circle point to circumstance
