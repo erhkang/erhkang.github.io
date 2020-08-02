@@ -254,7 +254,7 @@
         .text("Year");
 
 
-      var events_legends = svg.append('g').attr('transform', 'translate('+((width - courtWidth)/4+30)+','+(850)+')');
+      var events_legends = svg.append('g').attr('transform', 'translate('+((width - courtWidth)/4+40)+','+(875)+')');
       
       events_legends.append("text")
                     .attr("display", "none")
